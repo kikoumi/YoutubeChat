@@ -1,0 +1,153 @@
+<div class="viewbox">
+  <div id="videoform">
+    <div id="videoplayer">
+      <iframe id="player" width="1280" height="720" src="https://www.youtube.com/embed/<%= @post.url%>?enablejsapi=1" frameborder="0" allow="autoplay; encrypted-media;" allowfullscreen></iframe>
+    </div>
+    <button id="play">再生</button>
+    <button id="pause">一時停止</button>
+    <button id="stop">停止</button>
+    <button id="prev">10秒前へ</button>
+    <button id="next">10秒先へ</button>
+    <button id="volup">音量アップ</button>
+    <button id="voldown">音量ダウン</button>
+    <button id="mute">ミュート</button>
+    <button id="cntbtn">時間確認</button>
+  </div>
+  <div id="commentsform_">
+  </div>
+  <%= content_tag :div, '', id: "post-id", data: { post_id: @post.id } %>
+  <%= content_tag :div, '', id: "user-id", data: { user_id: current_user.id} %>
+  <%= content_tag :div, '', id: "username", data: { username: current_user.name} %>
+</div>
+<div id="sample"></div>
+<%= javascript_pack_tag 'comment_post_vue' %>
+<script>
+/*
+var tag = document.createElement('script');
+tag.src = "https://www.youtube.com/iframe_api";
+var firstScriptTag = document.getElementsByTagName('script')[0];
+firstScriptTag.parentNode.insertBefore(tag, firstScriptTag);
+console.log(tag);
+
+function onYouTubeIframeAPIReady() {
+  player = new YT.Player(document.getElementById("player"), {});
+  console.log("youtube load");
+}
+
+
+
+
+  var tag = document.createElement('script');
+  tag.src = "https://www.youtube.com/iframe_api";
+  var firstScriptTag = document.getElementsByTagName('script')[0];
+  console.log(firstScriptTag);
+  firstScriptTag.parentNode.insertBefore(tag, firstScriptTag);
+  var player;
+  function onYouTubeIframeAPIReady() {
+    console.log("test");
+    player = new YT.Player('player', {
+    });
+  }
+
+  // 再生
+var ytPlay = document.getElementById('play');
+ytPlay.addEventListener('click', function() {
+    player.playVideo();
+});
+ 
+// 一時停止
+var ytPause = document.getElementById('pause');
+ytPause.addEventListener('click', function() {
+    player.pauseVideo();
+});
+ 
+// 停止
+var ytStop = document.getElementById('stop');
+ytStop.addEventListener('click', function() {
+    player.pauseVideo().seekTo(0);
+});
+ 
+// 10秒前へ
+var ytPrev = document.getElementById('prev');
+ytPrev.addEventListener('click', function() {
+    // 現在の再生時間取得
+    var currentTime = player.getCurrentTime();
+    player.seekTo(currentTime - 10);
+});
+ 
+// 10秒先へ
+var ytNext = document.getElementById('next');
+ytNext.addEventListener('click', function() {
+    // 現在の再生時間取得
+    var currentTime = player.getCurrentTime();
+    player.seekTo(currentTime + 10);
+});
+ 
+// 音量アップ(+10)
+var ytVolup = document.getElementById('volup');
+ytVolup.addEventListener('click', function() {
+    // 現在の音量取得
+    var currentVol = player.getVolume();
+    player.setVolume(currentVol + 10);
+});
+ 
+// 音量ダウン(-10)
+var ytVoldown = document.getElementById('voldown');
+ytVoldown.addEventListener('click', function() {
+    // 現在の音量取得
+    var currentVol = player.getVolume();
+    player.setVolume(currentVol - 10);
+});
+ 
+// ミュート
+var ytMute = document.getElementById('mute');
+ytMute.addEventListener('click', function() {
+    // ミュートされているかどうか
+    if(player.isMuted()) {
+        // ミュートの解除
+        player.unMute();
+    } else {
+        // ミュート
+        player.mute();
+    }
+});
+
+//変換用で作ったが、コメント送信時にバックグラウンドで行う予定にする
+
+window.onload = function() {
+  var dftime = document.getElementById("current_time");
+  var cvtime = TimeConvert(Number(dftime.textContent));
+  dftime.textContent = cvtime;
+}
+
+
+//current_time確認用
+
+var current_time_btn = document.getElementById('cntbtn');
+current_time_btn.addEventListener('click', function() {
+  var currentTime = player.getCurrentTime();
+  console.log(currentTime);
+});
+
+*/
+
+//hmsタイム
+function TimeConvert(t) {
+	var hms = "";
+	var h = t / 3600 | 0;
+	var m = t % 3600 / 60 | 0;
+	var s = t % 60;
+
+	return hms = padZero(h) + ":" + padZero(m) + ":" + padZero(s) + ":";;
+
+	function padZero(v) {
+    if (v < 10) {
+			return "0" + v;
+		} else {
+			return v;
+		}
+	}
+}
+
+</script>
+

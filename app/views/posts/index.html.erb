@@ -1,0 +1,13 @@
+<h1>音楽一覧</h1>
+<div class="cardbox">
+  <% @posts.each do |post|%>
+    <div class="card">
+      <a href=<%="/posts/#{post.url}"%>>
+        <%= image_tag  "#{post.thumbnail}" , class: "image" %>
+        <p class="title"><%= post.title %></p>
+      </a>
+    </div>
+  <% end %>
+</div>
+
+
