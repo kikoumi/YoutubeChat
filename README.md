@@ -1,6 +1,6 @@
 
 ## サンプル(gifのサイズが大きくなってしまったため、github内にgif作成してます)
-[gif](https://github.com/heroK12/YoutubeChat/blob/master/%E3%83%80%E3%82%A6%E3%83%B3%E3%83%AD%E3%83%BC%E3%83%89%20(1)%20(2).gif)
+[gif](https://github.com/heroK12/YoutubeChat/blob/master/sample.gif)
 
 ## YoutubeChat
 
