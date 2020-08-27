@@ -1,24 +1,15 @@
-# README
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+## サンプル(gifのサイズが大きくなってしまったため、github内にgif作成してます)
+[gif](https://github.com/heroK12/YoutubeChat/blob/master/%E3%83%80%E3%82%A6%E3%83%B3%E3%83%AD%E3%83%BC%E3%83%89%20(1)%20(2).gif)
 
-Things you may want to cover:
+## YoutubeChat
 
-* Ruby version
+Youtubeは動画へのコメントはあるが、時間ごとにコメントを残すようなものがないため
+拡張機能としてできるサイト
 
-* System dependencies
+## できたこと
+動画を取得し、各動画の時間毎にコメントはできる機能の作成
 
-* Configuration
-
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+## 問題と今後
+Youtubeの仕様上、投稿者設定などで埋め込み禁止の動画が多く
+想像していた機能に対応した動画がすくないため制作中止
